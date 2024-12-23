@@ -17,8 +17,8 @@ map("t", "<Esc>", "<C-\\><C-N>")
 
 -- Setup mappings for toggling terminal windows.
 -- For more information see :h nvui.term
-map({ "n", "t" }, "<leader>t", function()
-  require("nvchad.term").toggle { pos = "float", size = 0.3, id = "floatTerm" }
+map({ "n", "t" }, "<C-`>", function()
+  require("nvchad.term").toggle { pos = "sp", size = 0.3, id = "toggleTerm" }
 end)
 
 -- Show code actions

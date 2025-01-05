@@ -28,3 +28,12 @@ vim.api.nvim_create_autocmd("FileType", {
         vim.opt_local.cc = { 100 }
     end
 })
+
+-- Rust Configuration
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = "rust",
+    callback = function ()
+        vim.opt_local.cc = { 100 }
+    end
+})
+

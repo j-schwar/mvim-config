@@ -15,14 +15,27 @@ map("i", "jk", "<ESC>")
 map("t", "<Esc>", "<C-\\><C-N>")
 -- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
 
+map("n", "<leader>d", function ()
+  vim.lsp.buf.hover()
+end, { desc = "LSP Hover" })
+
 -- Setup mappings for toggling terminal windows.
 -- For more information see :h nvui.term
 map({ "n", "t" }, "<C-`>", function()
   require("nvchad.term").toggle { pos = "sp", size = 0.3, id = "toggleTerm" }
 end)
 
+-- Formatting files
+map("n", "ff", function ()
+  vim.lsp.buf.format()
+end)
+
 -- Show code actions
 map("n", "<leader>ca", function ()
   vim.lsp.buf.code_action()
+end)
+
+map("n", "<leader>u", function()
+  require("telescope.builtin").lsp_references()
 end)
 
